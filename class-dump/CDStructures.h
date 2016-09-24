@@ -84,6 +84,50 @@ struct CreateToolbarResult {
 
 struct DSPResampler;
 
+struct Event<const nia::hardware::Activity &> {
+    struct mutex _field1;
+    _Bool _field2;
+    struct __thread_id _field3;
+    struct condition_variable _field4;
+    struct list<std::__1::function<void (const nia::hardware::Activity &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::Activity &)>>> _field5;
+    struct __list_const_iterator<std::__1::function<void (const nia::hardware::Activity &)>, void *> {
+        struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> *_field1;
+    } _field6;
+};
+
+struct Event<const nia::hardware::GpsSatellite &> {
+    struct mutex _field1;
+    _Bool _field2;
+    struct __thread_id _field3;
+    struct condition_variable _field4;
+    struct list<std::__1::function<void (const nia::hardware::GpsSatellite &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::GpsSatellite &)>>> _field5;
+    struct __list_const_iterator<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> {
+        struct __list_node_base<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> *_field1;
+    } _field6;
+};
+
+struct Event<const nia::hardware::LocationUpdate &> {
+    struct mutex _field1;
+    _Bool _field2;
+    struct __thread_id _field3;
+    struct condition_variable _field4;
+    struct list<std::__1::function<void (const nia::hardware::LocationUpdate &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::LocationUpdate &)>>> _field5;
+    struct __list_const_iterator<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> {
+        struct __list_node_base<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> *_field1;
+    } _field6;
+};
+
+struct Event<const nia::hardware::SensorUpdate &> {
+    struct mutex _field1;
+    _Bool _field2;
+    struct __thread_id _field3;
+    struct condition_variable _field4;
+    struct list<std::__1::function<void (const nia::hardware::SensorUpdate &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::SensorUpdate &)>>> _field5;
+    struct __list_const_iterator<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> {
+        struct __list_node_base<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> *_field1;
+    } _field6;
+};
+
 struct FMOD_OS_CRITICALSECTION;
 
 struct FMOD_OS_LIBRARY;
@@ -169,19 +213,17 @@ struct InternalMetadataWithArena {
 
 struct IosActivityProvider {
     CDUnknownFunctionPointerType *_field1;
-    struct mutex _field2;
-    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> _field3;
-    id _field4;
+    struct Event<const nia::hardware::Activity &> _field2;
+    id _field3;
 };
 
 struct IosBillingDelegate;
 
 struct IosSensorProvider {
     CDUnknownFunctionPointerType *_field1;
-    struct mutex _field2;
-    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>> _field3;
-    struct shared_ptr<nia::hardware::location::LocationProvider> _field4;
-    id _field5;
+    struct shared_ptr<nia::hardware::location::LocationProvider> _field2;
+    struct Event<const nia::hardware::SensorUpdate &> _field3;
+    id _field4;
 };
 
 struct LinkedListNode;
@@ -215,9 +257,9 @@ struct LocationProvider {
     struct mutex _field4;
     struct Location _field5;
     struct CompassHeading _field6;
-    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> _field7;
-    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>> _field8;
-    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> _field9;
+    struct Event<const nia::hardware::LocationUpdate &> _field7;
+    struct Event<const nia::hardware::GpsSatellite &> _field8;
+    struct Event<const nia::hardware::LocationUpdate &> _field9;
 };
 
 struct LocationUpdate {
@@ -583,10 +625,35 @@ struct __darwin_sigaltstack {
     int ss_flags;
 };
 
+struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> *_field1;
+    struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> *_field2;
+};
+
+struct __list_node_base<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> *_field1;
+    struct __list_node_base<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> *_field2;
+};
+
+struct __list_node_base<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> *_field1;
+    struct __list_node_base<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> *_field2;
+};
+
+struct __list_node_base<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> *_field1;
+    struct __list_node_base<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> *_field2;
+};
+
 struct __shared_weak_count;
 
-struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-    struct __tree_node_base<void *> *_field1;
+struct __thread_id {
+    struct _opaque_pthread_t *_field1;
+};
+
+struct _opaque_pthread_cond_t {
+    long long _field1;
+    char _field2[40];
 };
 
 struct _opaque_pthread_mutex_t {
@@ -596,6 +663,10 @@ struct _opaque_pthread_mutex_t {
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>;
 
+struct condition_variable {
+    struct _opaque_pthread_cond_t _field1;
+};
+
 struct cr_found_class_t {
     char *_field1;
     unsigned int _field2;
@@ -603,6 +674,34 @@ struct cr_found_class_t {
 
 struct in_addr {
     unsigned int _field1;
+};
+
+struct list<std::__1::function<void (const nia::hardware::Activity &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::Activity &)>>> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::function<void (const nia::hardware::Activity &)>, void *>>> {
+        unsigned long long _field1;
+    } _field2;
+};
+
+struct list<std::__1::function<void (const nia::hardware::GpsSatellite &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::GpsSatellite &)>>> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *> _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::function<void (const nia::hardware::GpsSatellite &)>, void *>>> {
+        unsigned long long _field1;
+    } _field2;
+};
+
+struct list<std::__1::function<void (const nia::hardware::LocationUpdate &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::LocationUpdate &)>>> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *> _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::function<void (const nia::hardware::LocationUpdate &)>, void *>>> {
+        unsigned long long _field1;
+    } _field2;
+};
+
+struct list<std::__1::function<void (const nia::hardware::SensorUpdate &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::SensorUpdate &)>>> {
+    struct __list_node_base<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *> _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::function<void (const nia::hardware::SensorUpdate &)>, void *>>> {
+        unsigned long long _field1;
+    } _field2;
 };
 
 struct mutex {
@@ -617,10 +716,7 @@ struct plcrash_exception_server_context {
     CDUnknownFunctionPointerType _field5;
     void *_field6;
     struct _opaque_pthread_mutex_t _field7;
-    struct _opaque_pthread_cond_t {
-        long long _field1;
-        char _field2[40];
-    } _field8;
+    struct _opaque_pthread_cond_t _field8;
     unsigned int _field9;
     _Bool _field10;
 };
@@ -637,54 +733,6 @@ struct re_guts;
 
 struct recursive_mutex {
     struct _opaque_pthread_mutex_t _field1;
-};
-
-struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> {
-    struct __tree<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> {
-        struct __tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>> {
-    struct __tree<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>> {
-        struct __tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> {
-    struct __tree<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> {
-        struct __tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>> {
-    struct __tree<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>> {
-        struct __tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::SensorUpdate &)>>>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
 };
 
 struct shared_ptr<nia::game::iap::ios::IosBillingDelegate> {

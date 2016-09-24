@@ -6,21 +6,15 @@
 
 #import <Foundation/NSObject.h>
 
-#import "USAnalyticsInterface-Protocol.h"
+#import "NSURLSessionDelegate-Protocol.h"
 
 @class NSString;
-@protocol UpsightDataStoreInterface;
 
-@interface USAnalytics : NSObject <USAnalyticsInterface>
+@interface PGPTrustedCertificatesAuthenticator : NSObject <NSURLSessionDelegate>
 {
-    id <UpsightDataStoreInterface> _dataStore;
 }
 
-@property(readonly, nonatomic) id <UpsightDataStoreInterface> dataStore; // @synthesize dataStore=_dataStore;
-- (void).cxx_destruct;
-- (void)record:(id)arg1;
-- (id)initWithDataStore:(id)arg1;
-- (id)init;
+- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
