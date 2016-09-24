@@ -1,5 +1,5 @@
 
-0.37.1 (for architecture armv7):
+0.39.0 (for architecture armv7):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
@@ -108,16 +108,10 @@ _CC_SHA1_Init
 _CC_SHA1_Update
 _CC_SHA256
 _CC_SHA512
-_CFAbsoluteTimeGetCurrent
-_CFArrayAppendValue
-_CFArrayCreateMutable
-_CFArrayGetCount
-_CFArrayGetValueAtIndex
 _CFDataGetBytePtr
 _CFDataGetLength
 _CFEqual
 _CFHash
-_CFNumberGetType
 _CFRelease
 _CFRetain
 _CFRunLoopGetCurrent
@@ -237,7 +231,6 @@ _NSDefaultRunLoopMode
 _NSDeletedObjectsKey
 _NSFilePosixPermissions
 _NSFileSize
-_NSFileSystemFreeSize
 _NSFontAttributeName
 _NSForegroundColorAttributeName
 _NSFoundationVersionNumber
@@ -258,7 +251,6 @@ _NSJapaneseCalendar
 _NSKeyValueChangeNewKey
 _NSLocaleCountryCode
 _NSLocaleCurrencyCode
-_NSLocaleLanguageCode
 _NSLocalizedDescriptionKey
 _NSLocalizedFailureReasonErrorKey
 _NSLog
@@ -309,6 +301,7 @@ _OBJC_CLASS_$_CAEAGLLayer
 _OBJC_CLASS_$_CATransaction
 _OBJC_CLASS_$_CBCentralManager
 _OBJC_CLASS_$_CBUUID
+_OBJC_CLASS_$_CLGeocoder
 _OBJC_CLASS_$_CLLocation
 _OBJC_CLASS_$_CLLocationManager
 _OBJC_CLASS_$_CMMotionActivityManager
@@ -329,7 +322,6 @@ _OBJC_CLASS_$_NSCompoundPredicate
 _OBJC_CLASS_$_NSCondition
 _OBJC_CLASS_$_NSData
 _OBJC_CLASS_$_NSDate
-_OBJC_CLASS_$_NSDateComponents
 _OBJC_CLASS_$_NSDateFormatter
 _OBJC_CLASS_$_NSDictionary
 _OBJC_CLASS_$_NSEntityDescription
@@ -344,13 +336,11 @@ _OBJC_CLASS_$_NSHTTPURLResponse
 _OBJC_CLASS_$_NSIndexSet
 _OBJC_CLASS_$_NSInputStream
 _OBJC_CLASS_$_NSInvocation
-_OBJC_CLASS_$_NSInvocationOperation
 _OBJC_CLASS_$_NSJSONSerialization
 _OBJC_CLASS_$_NSKeyedArchiver
 _OBJC_CLASS_$_NSKeyedUnarchiver
 _OBJC_CLASS_$_NSLayoutConstraint
 _OBJC_CLASS_$_NSLocale
-_OBJC_CLASS_$_NSLock
 _OBJC_CLASS_$_NSManagedObject
 _OBJC_CLASS_$_NSManagedObjectContext
 _OBJC_CLASS_$_NSManagedObjectModel
@@ -373,7 +363,6 @@ _OBJC_CLASS_$_NSPointerArray
 _OBJC_CLASS_$_NSPredicate
 _OBJC_CLASS_$_NSProcessInfo
 _OBJC_CLASS_$_NSPropertyListSerialization
-_OBJC_CLASS_$_NSProxy
 _OBJC_CLASS_$_NSRegularExpression
 _OBJC_CLASS_$_NSRunLoop
 _OBJC_CLASS_$_NSScanner
@@ -403,7 +392,6 @@ _OBJC_CLASS_$_SSReadingList
 _OBJC_CLASS_$_UIActivityIndicatorView
 _OBJC_CLASS_$_UIAlertAction
 _OBJC_CLASS_$_UIAlertController
-_OBJC_CLASS_$_UIAlertView
 _OBJC_CLASS_$_UIApplication
 _OBJC_CLASS_$_UIBarButtonItem
 _OBJC_CLASS_$_UIButton
@@ -437,10 +425,8 @@ _OBJC_METACLASS_$_NSHTTPCookieStorage
 _OBJC_METACLASS_$_NSInputStream
 _OBJC_METACLASS_$_NSManagedObject
 _OBJC_METACLASS_$_NSObject
-_OBJC_METACLASS_$_NSProxy
 _OBJC_METACLASS_$_NSURLProtocol
 _OBJC_METACLASS_$_UIActivityIndicatorView
-_OBJC_METACLASS_$_UIAlertView
 _OBJC_METACLASS_$_UIControl
 _OBJC_METACLASS_$_UIImageView
 _OBJC_METACLASS_$_UILabel
@@ -490,7 +476,6 @@ _UIApplicationWillEnterForegroundNotification
 _UIApplicationWillResignActiveNotification
 _UIApplicationWillTerminateNotification
 _UIBackgroundTaskInvalid
-_UIDeviceOrientationDidChangeNotification
 _UIGraphicsBeginImageContext
 _UIGraphicsBeginImageContextWithOptions
 _UIGraphicsEndImageContext
@@ -1419,7 +1404,6 @@ ___floatundisf
 ___gxx_personality_sj0
 ___maskrune
 ___memcpy_chk
-___memmove_chk
 ___memset_chk
 ___moddi3
 ___modsi3
@@ -1443,7 +1427,6 @@ ___umoddi3
 ___umodsi3
 ___vsnprintf_chk
 __dispatch_main_q
-__dyld_get_image_header
 __dyld_get_image_name
 __dyld_get_image_vmaddr_slide
 __dyld_image_count
@@ -1471,7 +1454,6 @@ _atexit
 _atoi
 _atol
 _backtrace
-_backtrace_symbols
 _bcopy
 _bind
 _bsearch
@@ -1483,7 +1465,6 @@ _class_addMethod
 _class_addProperty
 _class_addProtocol
 _class_conformsToProtocol
-_class_copyMethodList
 _class_copyPropertyList
 _class_getClassMethod
 _class_getInstanceMethod
@@ -1510,7 +1491,6 @@ _deflateInit2_
 _difftime
 _dispatch_after
 _dispatch_async
-_dispatch_barrier_async
 _dispatch_data_create
 _dispatch_data_create_concat
 _dispatch_data_create_map
@@ -1593,7 +1573,6 @@ _getpagesize
 _getpid
 _getprogname
 _getpwuid
-_getsectdatafromheader
 _getsockname
 _getsockopt
 _gettimeofday
@@ -1625,7 +1604,6 @@ _hash_create
 _hash_search
 _host_page_size
 _host_statistics
-_imp_implementationWithBlock
 _inet_addr
 _inet_aton
 _inet_ntoa
@@ -1730,9 +1708,6 @@ _memcpy
 _memmove
 _memset
 _memset_pattern16
-_method_exchangeImplementations
-_method_getDescription
-_method_getName
 _method_getTypeEncoding
 _method_invoke
 _method_setImplementation
@@ -1761,7 +1736,6 @@ _objc_end_catch
 _objc_enumerationMutation
 _objc_exception_rethrow
 _objc_exception_throw
-_objc_getAssociatedObject
 _objc_getClass
 _objc_getMetaClass
 _objc_getProperty
@@ -1783,8 +1757,6 @@ _objc_retainAutorelease
 _objc_retainAutoreleaseReturnValue
 _objc_retainAutoreleasedReturnValue
 _objc_retainBlock
-_objc_setAssociatedObject
-_objc_setProperty
 _objc_setProperty_atomic
 _objc_setProperty_atomic_copy
 _objc_setProperty_nonatomic
@@ -1879,7 +1851,6 @@ _roundf
 _sched_get_priority_max
 _sched_get_priority_min
 _sched_yield
-_sel_getName
 _sel_getUid
 _sel_registerName
 _select
@@ -1905,7 +1876,6 @@ _snprintf
 _socket
 _sprintf
 _sqrt
-_srand
 _srandomdev
 _sscanf
 _stat
@@ -1940,7 +1910,6 @@ _system
 _tan
 _tanf
 _task_get_exception_ports
-_task_info
 _task_swap_exception_ports
 _task_threads
 _thread_get_exception_ports
@@ -1963,7 +1932,6 @@ _vm_deallocate
 _vm_map
 _vm_page_mask
 _vm_page_size
-_vm_protect
 _vm_read_overwrite
 _vprintf
 _vsnprintf
@@ -1974,7 +1942,7 @@ _wcslen
 _write
 dyld_stub_binder
 
-0.37.1 (for architecture arm64):
+0.39.0 (for architecture arm64):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
@@ -2083,16 +2051,10 @@ _CC_SHA1_Init
 _CC_SHA1_Update
 _CC_SHA256
 _CC_SHA512
-_CFAbsoluteTimeGetCurrent
-_CFArrayAppendValue
-_CFArrayCreateMutable
-_CFArrayGetCount
-_CFArrayGetValueAtIndex
 _CFDataGetBytePtr
 _CFDataGetLength
 _CFEqual
 _CFHash
-_CFNumberGetType
 _CFRelease
 _CFRetain
 _CFRunLoopGetCurrent
@@ -2212,7 +2174,6 @@ _NSDefaultRunLoopMode
 _NSDeletedObjectsKey
 _NSFilePosixPermissions
 _NSFileSize
-_NSFileSystemFreeSize
 _NSFontAttributeName
 _NSForegroundColorAttributeName
 _NSFoundationVersionNumber
@@ -2233,7 +2194,6 @@ _NSJapaneseCalendar
 _NSKeyValueChangeNewKey
 _NSLocaleCountryCode
 _NSLocaleCurrencyCode
-_NSLocaleLanguageCode
 _NSLocalizedDescriptionKey
 _NSLocalizedFailureReasonErrorKey
 _NSLog
@@ -2284,6 +2244,7 @@ _OBJC_CLASS_$_CAEAGLLayer
 _OBJC_CLASS_$_CATransaction
 _OBJC_CLASS_$_CBCentralManager
 _OBJC_CLASS_$_CBUUID
+_OBJC_CLASS_$_CLGeocoder
 _OBJC_CLASS_$_CLLocation
 _OBJC_CLASS_$_CLLocationManager
 _OBJC_CLASS_$_CMMotionActivityManager
@@ -2304,7 +2265,6 @@ _OBJC_CLASS_$_NSCompoundPredicate
 _OBJC_CLASS_$_NSCondition
 _OBJC_CLASS_$_NSData
 _OBJC_CLASS_$_NSDate
-_OBJC_CLASS_$_NSDateComponents
 _OBJC_CLASS_$_NSDateFormatter
 _OBJC_CLASS_$_NSDictionary
 _OBJC_CLASS_$_NSEntityDescription
@@ -2319,13 +2279,11 @@ _OBJC_CLASS_$_NSHTTPURLResponse
 _OBJC_CLASS_$_NSIndexSet
 _OBJC_CLASS_$_NSInputStream
 _OBJC_CLASS_$_NSInvocation
-_OBJC_CLASS_$_NSInvocationOperation
 _OBJC_CLASS_$_NSJSONSerialization
 _OBJC_CLASS_$_NSKeyedArchiver
 _OBJC_CLASS_$_NSKeyedUnarchiver
 _OBJC_CLASS_$_NSLayoutConstraint
 _OBJC_CLASS_$_NSLocale
-_OBJC_CLASS_$_NSLock
 _OBJC_CLASS_$_NSManagedObject
 _OBJC_CLASS_$_NSManagedObjectContext
 _OBJC_CLASS_$_NSManagedObjectModel
@@ -2348,7 +2306,6 @@ _OBJC_CLASS_$_NSPointerArray
 _OBJC_CLASS_$_NSPredicate
 _OBJC_CLASS_$_NSProcessInfo
 _OBJC_CLASS_$_NSPropertyListSerialization
-_OBJC_CLASS_$_NSProxy
 _OBJC_CLASS_$_NSRegularExpression
 _OBJC_CLASS_$_NSRunLoop
 _OBJC_CLASS_$_NSScanner
@@ -2378,7 +2335,6 @@ _OBJC_CLASS_$_SSReadingList
 _OBJC_CLASS_$_UIActivityIndicatorView
 _OBJC_CLASS_$_UIAlertAction
 _OBJC_CLASS_$_UIAlertController
-_OBJC_CLASS_$_UIAlertView
 _OBJC_CLASS_$_UIApplication
 _OBJC_CLASS_$_UIBarButtonItem
 _OBJC_CLASS_$_UIButton
@@ -2412,10 +2368,8 @@ _OBJC_METACLASS_$_NSHTTPCookieStorage
 _OBJC_METACLASS_$_NSInputStream
 _OBJC_METACLASS_$_NSManagedObject
 _OBJC_METACLASS_$_NSObject
-_OBJC_METACLASS_$_NSProxy
 _OBJC_METACLASS_$_NSURLProtocol
 _OBJC_METACLASS_$_UIActivityIndicatorView
-_OBJC_METACLASS_$_UIAlertView
 _OBJC_METACLASS_$_UIControl
 _OBJC_METACLASS_$_UIImageView
 _OBJC_METACLASS_$_UILabel
@@ -2466,7 +2420,6 @@ _UIApplicationWillEnterForegroundNotification
 _UIApplicationWillResignActiveNotification
 _UIApplicationWillTerminateNotification
 _UIBackgroundTaskInvalid
-_UIDeviceOrientationDidChangeNotification
 _UIGraphicsBeginImageContext
 _UIGraphicsBeginImageContextWithOptions
 _UIGraphicsEndImageContext
@@ -2678,46 +2631,6 @@ __ZN5physx5cloth16SwInterCollisionI6Simd4fE23estimateTemporaryMemoryEPNS0_20SwIn
 __ZN5physx5cloth16SwInterCollisionI6Simd4fEC1EPKNS0_20SwInterCollisionDataEjffjPFbPvS7_ER14StackAllocatorILm16EEPNS_13PxProfileZoneE
 __ZN5physx5cloth16SwInterCollisionI6Simd4fED1Ev
 __ZN5physx5cloth16SwInterCollisionI6Simd4fEclEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE10push_stateEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE11apply_stateEjPNS1_28plcrash_async_dwarf_cie_infoEPK26plcrash_async_thread_statePK23plcrash_async_byteorderPS6_
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE12eval_programEP21plcrash_async_mobjectjjPNS1_28plcrash_async_dwarf_cie_infoEPNS1_16gnu_ehptr_readerIjEEPK23plcrash_async_byteordermlm
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE12get_cfa_ruleEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE12set_registerEjNS1_28plcrash_dwarf_cfa_reg_rule_tEj
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE15remove_registerEj
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE16set_cfa_registerEjj
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE17get_register_ruleEjPNS1_28plcrash_dwarf_cfa_reg_rule_tEPj
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE18set_cfa_expressionEmm
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE23set_cfa_register_signedEji
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiE9pop_stateEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiEC1Ev
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIjiEC2Ev
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE10push_stateEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE11apply_stateEjPNS1_28plcrash_async_dwarf_cie_infoEPK26plcrash_async_thread_statePK23plcrash_async_byteorderPS6_
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE12eval_programEP21plcrash_async_mobjectyyPNS1_28plcrash_async_dwarf_cie_infoEPNS1_16gnu_ehptr_readerIyEEPK23plcrash_async_byteordermlm
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE12get_cfa_ruleEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE12set_registerEjNS1_28plcrash_dwarf_cfa_reg_rule_tEy
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE15remove_registerEj
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE16set_cfa_registerEjy
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE17get_register_ruleEjPNS1_28plcrash_dwarf_cfa_reg_rule_tEPy
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE18set_cfa_expressionEmm
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE23set_cfa_register_signedEjx
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxE9pop_stateEv
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxEC1Ev
-__ZN7plcrash3PL_5async15dwarf_cfa_stateIyxEC2Ev
-__ZN7plcrash3PL_5async16gnu_ehptr_readerIjE4readEP21plcrash_async_mobjectmlNS1_8DW_EH_PEEPjPm
-__ZN7plcrash3PL_5async16gnu_ehptr_readerIjEC1EPK23plcrash_async_byteorder
-__ZN7plcrash3PL_5async16gnu_ehptr_readerIyE4readEP21plcrash_async_mobjectmlNS1_8DW_EH_PEEPyPm
-__ZN7plcrash3PL_5async16gnu_ehptr_readerIyEC1EPK23plcrash_async_byteorder
-__ZN7plcrash3PL_5async24dwarf_cfa_state_iteratorIjiE4nextEPjPNS1_28plcrash_dwarf_cfa_reg_rule_tES4_
-__ZN7plcrash3PL_5async24dwarf_cfa_state_iteratorIjiEC1EPNS1_15dwarf_cfa_stateIjiEE
-__ZN7plcrash3PL_5async24dwarf_cfa_state_iteratorIyxE4nextEPjPNS1_28plcrash_dwarf_cfa_reg_rule_tEPy
-__ZN7plcrash3PL_5async24dwarf_cfa_state_iteratorIyxEC1EPNS1_15dwarf_cfa_stateIyxEE
-__ZN7plcrash3PL_5async33plcrash_async_dwarf_cie_info_initIjEE15plcrash_error_tPNS1_28plcrash_async_dwarf_cie_infoEP21plcrash_async_mobjectPK23plcrash_async_byteorderPNS1_16gnu_ehptr_readerIT_EEm
-__ZN7plcrash3PL_5async33plcrash_async_dwarf_cie_info_initIyEE15plcrash_error_tPNS1_28plcrash_async_dwarf_cie_infoEP21plcrash_async_mobjectPK23plcrash_async_byteorderPNS1_16gnu_ehptr_readerIT_EEm
-__ZN7plcrash3PL_5async33plcrash_async_dwarf_fde_info_initIjEE15plcrash_error_tPNS1_28plcrash_async_dwarf_fde_infoEP21plcrash_async_mobjectPK23plcrash_async_byteordermb
-__ZN7plcrash3PL_5async33plcrash_async_dwarf_fde_info_initIyEE15plcrash_error_tPNS1_28plcrash_async_dwarf_fde_infoEP21plcrash_async_mobjectPK23plcrash_async_byteordermb
-__ZN7plcrash3PL_5async35plcrash_async_dwarf_expression_evalIjiEE15plcrash_error_tP21plcrash_async_mobjectjPK26plcrash_async_thread_statePK23plcrash_async_byteordermlmPT_mSD_
-__ZN7plcrash3PL_5async35plcrash_async_dwarf_expression_evalIyxEE15plcrash_error_tP21plcrash_async_mobjectjPK26plcrash_async_thread_statePK23plcrash_async_byteordermlmPT_mSD_
 __ZN7plcrash5async15dwarf_cfa_stateIjiE10push_stateEv
 __ZN7plcrash5async15dwarf_cfa_stateIjiE11apply_stateEjPNS0_28plcrash_async_dwarf_cie_infoEPK26plcrash_async_thread_statePK23plcrash_async_byteorderPS5_
 __ZN7plcrash5async15dwarf_cfa_stateIjiE12eval_programEP21plcrash_async_mobjectjjPNS0_28plcrash_async_dwarf_cie_infoEPNS0_16gnu_ehptr_readerIjEEPK23plcrash_async_byteordermlm
@@ -2953,7 +2866,6 @@ ___strncat_chk
 ___tolower
 ___vsnprintf_chk
 __dispatch_main_q
-__dyld_get_image_header
 __dyld_get_image_name
 __dyld_get_image_vmaddr_slide
 __dyld_image_count
@@ -2981,7 +2893,6 @@ _atexit
 _atoi
 _atol
 _backtrace
-_backtrace_symbols
 _bcopy
 _bind
 _bsearch
@@ -2993,7 +2904,6 @@ _class_addMethod
 _class_addProperty
 _class_addProtocol
 _class_conformsToProtocol
-_class_copyMethodList
 _class_copyPropertyList
 _class_getClassMethod
 _class_getInstanceMethod
@@ -3017,7 +2927,6 @@ _deflateInit2_
 _difftime
 _dispatch_after
 _dispatch_async
-_dispatch_barrier_async
 _dispatch_data_create
 _dispatch_data_create_concat
 _dispatch_data_create_map
@@ -3099,7 +3008,6 @@ _getpagesize
 _getpid
 _getprogname
 _getpwuid
-_getsectdatafromheader_64
 _getsockname
 _getsockopt
 _gettimeofday
@@ -3131,7 +3039,6 @@ _hash_create
 _hash_search
 _host_page_size
 _host_statistics
-_imp_implementationWithBlock
 _inet_addr
 _inet_aton
 _inet_ntoa
@@ -3234,9 +3141,6 @@ _memcpy
 _memmove
 _memset
 _memset_pattern16
-_method_exchangeImplementations
-_method_getDescription
-_method_getName
 _method_getTypeEncoding
 _method_invoke
 _method_setImplementation
@@ -3264,7 +3168,6 @@ _objc_end_catch
 _objc_enumerationMutation
 _objc_exception_rethrow
 _objc_exception_throw
-_objc_getAssociatedObject
 _objc_getClass
 _objc_getMetaClass
 _objc_getProperty
@@ -3285,8 +3188,6 @@ _objc_retainAutorelease
 _objc_retainAutoreleaseReturnValue
 _objc_retainAutoreleasedReturnValue
 _objc_retainBlock
-_objc_setAssociatedObject
-_objc_setProperty
 _objc_setProperty_atomic
 _objc_setProperty_atomic_copy
 _objc_setProperty_nonatomic
@@ -3379,7 +3280,6 @@ _roundf
 _sched_get_priority_max
 _sched_get_priority_min
 _sched_yield
-_sel_getName
 _sel_getUid
 _sel_registerName
 _select
@@ -3405,7 +3305,6 @@ _snprintf
 _socket
 _sprintf
 _sqrt
-_srand
 _srandomdev
 _sscanf
 _stat
@@ -3440,7 +3339,6 @@ _system
 _tan
 _tanf
 _task_get_exception_ports
-_task_info
 _task_swap_exception_ports
 _task_threads
 _thread_get_exception_ports
@@ -3462,7 +3360,6 @@ _vm_deallocate
 _vm_map
 _vm_page_mask
 _vm_page_size
-_vm_protect
 _vm_read_overwrite
 _vprintf
 _vsnprintf
