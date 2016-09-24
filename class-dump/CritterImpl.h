@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class CRAppLocator, CRAppRater, CRCrashArchive, CRDevice, CRExceptionHandler, CRNetCollector, CRNetStatDispatch, CRPreferences, CRReachability, CRThrottle, CRTransactionReporter, CrittercismConfig, NSOperationQueue, NSString, PLCrashReporter;
 @protocol CrittercismDelegate;

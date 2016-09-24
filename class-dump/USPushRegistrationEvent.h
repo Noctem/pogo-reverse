@@ -14,6 +14,7 @@
 
 + (id)eventWithParameters:(id)arg1 token:(id)arg2;
 @property(readonly, nonatomic) NSString *token;
+- (_Bool)shouldRegisterToken:(id)arg1 withTTL:(double)arg2;
 - (id)initWithParameters:(id)arg1 token:(id)arg2;
 - (id)initWithType:(id)arg1 parameters:(id)arg2;
 

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)application:(id)arg1 handleActionWithIdentifier:(id)arg2 forLocalNotification:(id)arg3 withResponseInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
 - (_Bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)openUrl:(id)arg1;
