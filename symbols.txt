@@ -1,5 +1,5 @@
 
-0.33.1 (for architecture armv7):
+0.35.0 (for architecture armv7):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
@@ -302,6 +302,7 @@ _OBJC_CLASS_$_AVURLAsset
 _OBJC_CLASS_$_CADisplayLink
 _OBJC_CLASS_$_CAEAGLLayer
 _OBJC_CLASS_$_CATransaction
+_OBJC_CLASS_$_CBCentralManager
 _OBJC_CLASS_$_CLLocation
 _OBJC_CLASS_$_CLLocationManager
 _OBJC_CLASS_$_CMMotionActivityManager
@@ -419,6 +420,7 @@ _OBJC_CLASS_$_UIView
 _OBJC_CLASS_$_UIViewController
 _OBJC_CLASS_$_UIWebView
 _OBJC_CLASS_$_UIWindow
+_OBJC_CLASS_$_WKWebView
 _OBJC_EHTYPE_$_NSException
 _OBJC_EHTYPE_id
 _OBJC_METACLASS_$_NSEnumerator
@@ -1952,7 +1954,7 @@ _wcslen
 _write
 dyld_stub_binder
 
-0.33.1 (for architecture arm64):
+0.35.0 (for architecture arm64):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
@@ -2255,6 +2257,7 @@ _OBJC_CLASS_$_AVURLAsset
 _OBJC_CLASS_$_CADisplayLink
 _OBJC_CLASS_$_CAEAGLLayer
 _OBJC_CLASS_$_CATransaction
+_OBJC_CLASS_$_CBCentralManager
 _OBJC_CLASS_$_CLLocation
 _OBJC_CLASS_$_CLLocationManager
 _OBJC_CLASS_$_CMMotionActivityManager
@@ -2372,6 +2375,7 @@ _OBJC_CLASS_$_UIView
 _OBJC_CLASS_$_UIViewController
 _OBJC_CLASS_$_UIWebView
 _OBJC_CLASS_$_UIWindow
+_OBJC_CLASS_$_WKWebView
 _OBJC_EHTYPE_$_NSException
 _OBJC_EHTYPE_id
 _OBJC_METACLASS_$_NSEnumerator
