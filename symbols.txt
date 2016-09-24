@@ -1,5 +1,5 @@
 
-/Users/David/Developer/ReverseEngineering/bins/0.31.0 (for architecture armv7):
+/Users/David/Developer/ReverseEngineering/bins/0.31.1 (for architecture armv7):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
@@ -1941,7 +1941,7 @@ _wcslen
 _write
 dyld_stub_binder
 
-/Users/David/Developer/ReverseEngineering/bins/0.31.0 (for architecture arm64):
+/Users/David/Developer/ReverseEngineering/bins/0.31.1 (for architecture arm64):
 _ABAddressBookAddRecord
 _ABAddressBookCopyArrayOfAllGroups
 _ABAddressBookCopyArrayOfAllPeople
