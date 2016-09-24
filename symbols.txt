@@ -1,5 +1,5 @@
 
-/Users/David/Developer/ReverseEngineering/bins/0.29.0 (for architecture armv7):
+/Users/David/Developer/ReverseEngineering/bins/0.29.1 (for architecture armv7):
 _AVAudioSessionCategoryAmbient
 _AVAudioSessionCategoryAudioProcessing
 _AVAudioSessionCategoryMultiRoute
@@ -1849,7 +1849,7 @@ _wcslen
 _write
 dyld_stub_binder
 
-/Users/David/Developer/ReverseEngineering/bins/0.29.0 (for architecture arm64):
+/Users/David/Developer/ReverseEngineering/bins/0.29.1 (for architecture arm64):
 _AVAudioSessionCategoryAmbient
 _AVAudioSessionCategoryAudioProcessing
 _AVAudioSessionCategoryMultiRoute
