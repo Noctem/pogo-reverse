@@ -6,11 +6,13 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableSet, USInstallationTracker;
+@class NSMutableSet, NSNumber, USInstallationTracker;
 
 @interface USServiceManager : NSObject
 {
     _Bool _initialized;
+    NSNumber *_storedMessageID;
+    NSNumber *_storedCampaignID;
     NSMutableSet *_services;
     USInstallationTracker *_installationTracker;
 }
@@ -24,6 +26,8 @@
 @property(retain, nonatomic) USInstallationTracker *installationTracker; // @synthesize installationTracker=_installationTracker;
 @property(retain, nonatomic) NSMutableSet *services; // @synthesize services=_services;
 @property(nonatomic) _Bool initialized; // @synthesize initialized=_initialized;
+@property(retain, nonatomic) NSNumber *storedCampaignID; // @synthesize storedCampaignID=_storedCampaignID;
+@property(retain, nonatomic) NSNumber *storedMessageID; // @synthesize storedMessageID=_storedMessageID;
 - (void).cxx_destruct;
 - (void)initializeSDK;
 - (void)onApplicationDidFinishLaunching:(id)arg1;

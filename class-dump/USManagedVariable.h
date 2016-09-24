@@ -15,6 +15,7 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)allManagedVariables;
 + (id)managedBooleanWithTag:(id)arg1;
 + (id)managedFloatWithTag:(id)arg1;
 + (id)managedIntegerWithTag:(id)arg1;

@@ -538,6 +538,12 @@ struct _Plcrash__CrashReport {
     struct _Plcrash__CrashReport__ReportInfo *_field12;
 };
 
+struct _Plcrash__CrashReport__ApplicationInfo {
+    struct _ProtobufCMessage _field1;
+    char *_field2;
+    char *_field3;
+};
+
 struct _Plcrash__CrashReport__BinaryImage;
 
 struct _Plcrash__CrashReport__Exception {
@@ -601,6 +607,16 @@ struct _Plcrash__CrashReport__Symbol {
     unsigned long long _field5;
 };
 
+struct _Plcrash__CrashReport__SystemInfo {
+    struct _ProtobufCMessage _field1;
+    int _field2;
+    int _field3;
+    char *_field4;
+    int _field5;
+    long long _field6;
+    char *_field7;
+};
+
 struct _Plcrash__CrashReport__Thread;
 
 struct _Plcrash__CrashReport__Thread__StackFrame {
@@ -618,12 +634,6 @@ struct _ProtobufCMessage {
 struct _ProtobufCMessageDescriptor;
 
 struct _ProtobufCMessageUnknownField;
-
-struct __darwin_sigaltstack {
-    void *ss_sp;
-    unsigned long long ss_size;
-    int ss_flags;
-};
 
 struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> {
     struct __list_node_base<std::__1::function<void (const nia::hardware::Activity &)>, void *> *_field1;
@@ -665,15 +675,6 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
 
 struct condition_variable {
     struct _opaque_pthread_cond_t _field1;
-};
-
-struct cr_found_class_t {
-    char *_field1;
-    unsigned int _field2;
-};
-
-struct in_addr {
-    unsigned int _field1;
 };
 
 struct list<std::__1::function<void (const nia::hardware::Activity &)>, std::__1::allocator<std::__1::function<void (const nia::hardware::Activity &)>>> {
@@ -743,14 +744,6 @@ struct shared_ptr<nia::game::iap::ios::IosBillingDelegate> {
 struct shared_ptr<nia::hardware::location::LocationProvider> {
     struct LocationProvider *_field1;
     struct __shared_weak_count *_field2;
-};
-
-struct sockaddr_in {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned short _field3;
-    struct in_addr _field4;
-    char _field5[8];
 };
 
 struct timeval {

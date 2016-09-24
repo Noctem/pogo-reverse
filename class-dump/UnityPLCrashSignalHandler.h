@@ -8,7 +8,11 @@
 
 @interface UnityPLCrashSignalHandler : NSObject
 {
-    struct __darwin_sigaltstack _sigstk;
+    struct __darwin_sigaltstack {
+        void *ss_sp;
+        unsigned long long ss_size;
+        int ss_flags;
+    } _sigstk;
 }
 
 + (void)resetHandlers;

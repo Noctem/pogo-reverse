@@ -8,10 +8,11 @@
 
 #import "USBillboardDelegate-Protocol.h"
 #import "USManagedVariableObserverDelegate-Protocol.h"
+#import "UpsightSessionDelegate-Protocol.h"
 
 @class NSDictionary, NSMutableDictionary, NSString;
 
-@interface UpsightManager : NSObject <USManagedVariableObserverDelegate, USBillboardDelegate>
+@interface UpsightManager : NSObject <USManagedVariableObserverDelegate, USBillboardDelegate, UpsightSessionDelegate>
 {
     _Bool _shouldSynchronizeManagedVariables;
     NSDictionary *_remoteNotificationDictionary;
@@ -31,6 +32,8 @@
 - (void).cxx_destruct;
 - (void)observer:(id)arg1 didSynchronizeManagedVariables:(id)arg2;
 - (_Bool)observerShouldSynchronizeManagedVariables:(id)arg1;
+- (void)upsightSessionDidResume;
+- (void)upsightSessionDidStart;
 - (void)billboard:(id)arg1 didReceivePurchase:(id)arg2;
 - (void)billboard:(id)arg1 didReceiveReward:(id)arg2;
 - (void)billboardDidDismiss:(id)arg1;

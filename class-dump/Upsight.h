@@ -35,6 +35,9 @@
 + (id)publicKey;
 + (id)token;
 + (_Bool)isTokenFormatValid:(id)arg1;
++ (_Bool)getSDKEnabled;
++ (void)setSDKEnabled:(_Bool)arg1;
++ (void)startSDK;
 + (id)sharedUpsight;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(retain, nonatomic) id <UpsightDataStoreInterface> dataStore; // @synthesize dataStore=_dataStore;

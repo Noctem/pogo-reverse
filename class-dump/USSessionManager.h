@@ -7,16 +7,17 @@
 #import <Foundation/NSObject.h>
 
 @class NSDictionary, NSNumber, NSString, USSession;
-@protocol USAnalyticsInterface, UpsightDataStoreInterface;
+@protocol USAnalyticsInterface, UpsightDataStoreInterface, UpsightSessionDelegate;
 
 @interface USSessionManager : NSObject
 {
     id <USAnalyticsInterface> _analytics;
     USSession *_currentSession;
+    NSObject<UpsightSessionDelegate> *_sessionDelegate;
     id <UpsightDataStoreInterface> _dataStore;
     double _timeToNewSession;
-    NSDictionary *_stateTable;
     NSString *_currentState;
+    NSDictionary *_stateTable;
     NSNumber *_messageID;
     NSNumber *_campaignID;
 }
@@ -26,12 +27,14 @@
 + (id)sharedSessionManager;
 @property(retain, nonatomic) NSNumber *campaignID; // @synthesize campaignID=_campaignID;
 @property(retain, nonatomic) NSNumber *messageID; // @synthesize messageID=_messageID;
-@property(nonatomic) NSString *currentState; // @synthesize currentState=_currentState;
 @property(retain, nonatomic) NSDictionary *stateTable; // @synthesize stateTable=_stateTable;
+@property(nonatomic) NSString *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) double timeToNewSession; // @synthesize timeToNewSession=_timeToNewSession;
 @property(readonly, nonatomic) id <UpsightDataStoreInterface> dataStore; // @synthesize dataStore=_dataStore;
+@property(nonatomic) __weak NSObject<UpsightSessionDelegate> *sessionDelegate; // @synthesize sessionDelegate=_sessionDelegate;
 @property(retain) USSession *currentSession; // @synthesize currentSession=_currentSession;
 - (void).cxx_destruct;
+- (void)set_sessionDelegate:(id)arg1;
 - (void)saveSession:(id)arg1;
 - (void)setMessageID:(id)arg1 campaignID:(id)arg2;
 @property(readonly, nonatomic) id <USAnalyticsInterface> analytics; // @synthesize analytics=_analytics;
@@ -50,6 +53,7 @@
 - (void)enterStarted;
 - (id)exitLaunched;
 - (void)executeLaunched;
+- (void)endSession;
 - (void)transition;
 - (void)startWithMessageID:(id)arg1 campaignID:(id)arg2;
 - (void)dealloc;
