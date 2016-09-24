@@ -10,6 +10,8 @@
 {
 }
 
+- (_Bool)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
+- (_Bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)openUrl:(id)arg1;
 - (void)shouldAttachRenderDelegate;
 - (void)applicationWillResignActive:(id)arg1;

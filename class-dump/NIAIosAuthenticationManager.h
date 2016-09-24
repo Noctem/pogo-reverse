@@ -6,24 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@class GTMOAuth2Authentication, GTMSessionFetcherService, NSString;
+#import "GIDSignInDelegate-Protocol.h"
+#import "GIDSignInUIDelegate-Protocol.h"
 
-@interface NIAIosAuthenticationManager : NSObject
+@class GIDGoogleUser, GIDSignIn, NSString;
+
+@interface NIAIosAuthenticationManager : NSObject <GIDSignInDelegate, GIDSignInUIDelegate>
 {
-    GTMOAuth2Authentication *_auth;
-    NSString *_clientAuthToken;
-    GTMSessionFetcherService *_fetcherService;
+    CDUnknownBlockType _loginCompletionHandler;
+    CDUnknownBlockType _logoutCompletionHandler;
+    GIDGoogleUser *_signedInUser;
+    _Bool _loginWithUI;
+    _Bool _loginFinished;
+    GIDSignIn *_signIn;
 }
 
 - (void).cxx_destruct;
+- (void)signIn:(id)arg1 dismissViewController:(id)arg2;
+- (void)signIn:(id)arg1 presentViewController:(id)arg2;
 - (id)userEmail;
-- (id)description;
-- (void)getAccountOrLogin:(id)arg1 clientSecret:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)navigationController;
-- (void)clearAuth;
-- (id)defaultSourceString;
+@property(readonly, copy) NSString *description;
+- (id)accessToken;
+- (id)authentication;
+- (void)signIn:(id)arg1 didDisconnectWithUser:(id)arg2 withError:(id)arg3;
+- (void)signIn:(id)arg1 didSignInForUser:(id)arg2 withError:(id)arg3;
 - (void)refreshIdTokenWithCompletion:(CDUnknownBlockType)arg1;
+- (void)reauthorizeUser:(CDUnknownBlockType)arg1;
+- (void)getAccountOrLogin:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)clearAuth:(CDUnknownBlockType)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

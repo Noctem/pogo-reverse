@@ -210,13 +210,14 @@ struct LocationParameters {
 
 struct LocationProvider {
     CDUnknownFunctionPointerType *_field1;
-    struct mutex _field2;
+    struct recursive_mutex _field2;
     struct mutex _field3;
     struct mutex _field4;
     struct Location _field5;
     struct CompassHeading _field6;
     struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> _field7;
     struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::GpsSatellite &)>>>> _field8;
+    struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::LocationUpdate &)>>>> _field9;
 };
 
 struct LocationUpdate {
@@ -355,6 +356,10 @@ struct Thread {
     struct FMOD_OS_SEMAPHORE *_field9;
     CDUnknownFunctionPointerType _field10;
     int _field11;
+};
+
+struct UIImage {
+    Class _field1;
 };
 
 struct UnityDisplaySurfaceBase {
@@ -628,6 +633,12 @@ struct plcrash_mach_exception_port_set {
     int flavors[14];
 };
 
+struct re_guts;
+
+struct recursive_mutex {
+    struct _opaque_pthread_mutex_t _field1;
+};
+
 struct set<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> {
     struct __tree<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, std::__1::less<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>, std::__1::allocator<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>>> {
         struct __tree_node<std::__1::shared_ptr<std::__1::function<void (const nia::hardware::Activity &)>>, void *> *_field1;
@@ -702,6 +713,11 @@ struct timeval {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    id _field1;
+    unsigned short _field2;
+} CDStruct_6a59ab51;
+
+typedef struct {
     unsigned long long _field1;
     id *_field2;
     unsigned long long *_field3;
@@ -724,6 +740,11 @@ typedef struct {
     unsigned int flags;
     long long epoch;
 } CDStruct_1b6d18a9;
+
+typedef struct {
+    long long _field1;
+    long long _field2;
+} CDStruct_912cb5d2;
 
 // Template types
 typedef struct shared_ptr<nia::game::iap::ios::IosBillingDelegate> {
