@@ -9,15 +9,16 @@
 #import "USActionMapManagerObserver-Protocol.h"
 #import "USBillboardManager-Protocol.h"
 #import "USContentUnitBillboardDataSource-Protocol.h"
-#import "USContentUnitViewControllerCacheDelegate-Protocol.h"
+#import "USMediator-Protocol.h"
+#import "USViewControllerCacheDelegate-Protocol.h"
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, USContentUnitViewControllerCache, USURLLoader;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, USURLLoader, USViewControllerCache;
 @protocol USActionMapManagerInterface, UpsightDataStoreInterface;
 
-@interface USContentUnitBillboardManager : NSObject <USContentUnitViewControllerCacheDelegate, USActionMapManagerObserver, USContentUnitBillboardDataSource, USBillboardManager>
+@interface USContentUnitBillboardManager : NSObject <USViewControllerCacheDelegate, USActionMapManagerObserver, USContentUnitBillboardDataSource, USMediator, USBillboardManager>
 {
     NSDictionary *_actionTypeToHandlerMap;
-    USContentUnitViewControllerCache *_controllersCache;
+    USViewControllerCache *_controllersCache;
     USURLLoader *_URLLoader;
     id <UpsightDataStoreInterface> _dataStore;
     NSMutableDictionary *_scopeToBillboardMap;
@@ -31,8 +32,11 @@
 @property(retain, nonatomic) NSMutableArray *presentScopedContentRecords; // @synthesize presentScopedContentRecords=_presentScopedContentRecords;
 @property(retain, nonatomic) NSMutableDictionary *scopeToBillboardMap; // @synthesize scopeToBillboardMap=_scopeToBillboardMap;
 @property(readonly, nonatomic) id <UpsightDataStoreInterface> dataStore; // @synthesize dataStore=_dataStore;
-@property(retain, nonatomic) USContentUnitViewControllerCache *controllersCache; // @synthesize controllersCache=_controllersCache;
+@property(retain, nonatomic) USViewControllerCache *controllersCache; // @synthesize controllersCache=_controllersCache;
 - (void).cxx_destruct;
+- (CDUnknownBlockType)presentContent;
+- (CDUnknownBlockType)presentDialog;
+- (CDUnknownBlockType)presentScopedDialog;
 - (CDUnknownBlockType)openInAppStore;
 - (CDUnknownBlockType)associateOnce;
 - (CDUnknownBlockType)presentCloseButton;
@@ -46,6 +50,8 @@
 - (CDUnknownBlockType)presentScopelessContent;
 - (CDUnknownBlockType)presentScopedContent;
 - (CDUnknownBlockType)buildContent;
+- (id)mediatedContentUnitWithContentModel:(id)arg1;
+- (id)mediatedViewController;
 - (void)actionMapManager:(id)arg1 didDestroyActionMap:(id)arg2;
 - (void)cache:(id)arg1 didAddController:(id)arg2;
 - (_Bool)isContentAvailableForBillboard:(id)arg1;

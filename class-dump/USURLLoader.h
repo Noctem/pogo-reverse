@@ -6,26 +6,27 @@
 
 #import <objc/NSObject.h>
 
-#import "NSURLConnectionDataDelegate-Protocol.h"
+#import "NSURLSessionDelegate-Protocol.h"
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString, NSURLSession;
 
-@interface USURLLoader : NSObject <NSURLConnectionDataDelegate>
+@interface USURLLoader : NSObject <NSURLSessionDelegate>
 {
-    NSMutableDictionary *_connections;
+    NSURLSession *_URLSession;
+    NSMutableDictionary *_dataTaskToLoaderItemMap;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
+@property(retain, nonatomic) NSMutableDictionary *dataTaskToLoaderItemMap; // @synthesize dataTaskToLoaderItemMap=_dataTaskToLoaderItemMap;
+@property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 - (void).cxx_destruct;
 - (void)openURL:(id)arg1;
-- (void)invalidateConnection:(id)arg1;
+- (void)completeTask:(id)arg1;
 - (_Bool)isRequestWithStandardURLScheme:(id)arg1;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)loadURL:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

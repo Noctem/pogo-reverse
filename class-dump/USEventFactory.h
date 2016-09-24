@@ -10,6 +10,7 @@
 {
 }
 
++ (id)attributionEventForCampaign:(id)arg1 creative:(id)arg2 source:(id)arg3 pubData:(id)arg4;
 + (id)UXMEnumerateEventWithUXMSchema:(id)arg1 pubData:(id)arg2;
 + (id)pushUnregistrationEventWithPubData:(id)arg1;
 + (id)pushRegistrationEventWithToken:(id)arg1 pubData:(id)arg2;

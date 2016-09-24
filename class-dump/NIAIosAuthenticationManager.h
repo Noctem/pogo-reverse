@@ -8,10 +8,11 @@
 
 #import "GIDSignInDelegate-Protocol.h"
 #import "GIDSignInUIDelegate-Protocol.h"
+#import "SFSafariViewControllerDelegate-Protocol.h"
 
-@class GIDGoogleUser, GIDSignIn, NSString;
+@class GIDGoogleUser, GIDSignIn, NSString, UIViewController;
 
-@interface NIAIosAuthenticationManager : NSObject <GIDSignInDelegate, GIDSignInUIDelegate>
+@interface NIAIosAuthenticationManager : NSObject <GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate>
 {
     CDUnknownBlockType _loginCompletionHandler;
     CDUnknownBlockType _logoutCompletionHandler;
@@ -19,6 +20,7 @@
     _Bool _loginWithUI;
     _Bool _loginFinished;
     GIDSignIn *_signIn;
+    UIViewController *_presentedViewController;
 }
 
 - (void).cxx_destruct;
@@ -32,8 +34,10 @@
 - (void)signIn:(id)arg1 didSignInForUser:(id)arg2 withError:(id)arg3;
 - (void)refreshIdTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)reauthorizeUser:(CDUnknownBlockType)arg1;
+- (void)performSignIn;
 - (void)getAccountOrLogin:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearAuth:(CDUnknownBlockType)arg1;
+- (int)statusForError:(id)arg1;
 - (id)init;
 
 // Remaining properties

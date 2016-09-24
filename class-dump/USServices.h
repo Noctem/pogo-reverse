@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class USActionMapManager, USAnalytics, USConfigurationManager, USContentUnitBillboardManager, USDispatcher;
+@class USActionMapManager, USAnalytics, USConfigurationManager, USContentUnitBillboardManager, USDispatcher, USPartnerManager;
 @protocol UpsightDataStoreInterface;
 
 @interface USServices : NSObject
@@ -16,10 +16,12 @@
     USDispatcher *_dispatcher;
     USConfigurationManager *_configManager;
     USActionMapManager *_actionMapManager;
+    USPartnerManager *_partnerManager;
     USContentUnitBillboardManager *_billboardManager;
 }
 
 @property(retain, nonatomic) USContentUnitBillboardManager *billboardManager; // @synthesize billboardManager=_billboardManager;
+@property(retain, nonatomic) USPartnerManager *partnerManager; // @synthesize partnerManager=_partnerManager;
 @property(retain, nonatomic) USActionMapManager *actionMapManager; // @synthesize actionMapManager=_actionMapManager;
 @property(retain, nonatomic) USConfigurationManager *configManager; // @synthesize configManager=_configManager;
 @property(retain, nonatomic) USDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;

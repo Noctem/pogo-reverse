@@ -7,19 +7,18 @@
 #import <objc/NSObject.h>
 
 #import "SKStoreProductViewControllerDelegate-Protocol.h"
-#import "UIViewControllerTransitioningDelegate-Protocol.h"
 #import "USBillboard-Protocol.h"
-#import "USContentUnitViewControllerDelegate-Protocol.h"
+#import "USViewControllerDelegate-Protocol.h"
 
-@class NSString, SKStoreProductViewController, USContentUnitViewController;
-@protocol USBillboardDelegate, USContentUnitBillboardDataSource;
+@class NSString, SKStoreProductViewController;
+@protocol USBillboardDelegate, USContentUnitBillboardDataSource, USViewController;
 
-@interface USContentUnitBillboard : NSObject <USContentUnitViewControllerDelegate, UIViewControllerTransitioningDelegate, SKStoreProductViewControllerDelegate, USBillboard>
+@interface USContentUnitBillboard : NSObject <USViewControllerDelegate, SKStoreProductViewControllerDelegate, USBillboard>
 {
     _Bool _presenting;
     NSString *_scope;
     id <USBillboardDelegate> _delegate;
-    USContentUnitViewController *_viewController;
+    id <USViewController> _viewController;
     id <USContentUnitBillboardDataSource> _dataSource;
     SKStoreProductViewController *_inAppStoreController;
 }
@@ -27,7 +26,7 @@
 + (id)presentingControllerToScopeMap;
 @property(retain) SKStoreProductViewController *inAppStoreController; // @synthesize inAppStoreController=_inAppStoreController;
 @property __weak id <USContentUnitBillboardDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(retain) USContentUnitViewController *viewController; // @synthesize viewController=_viewController;
+@property(retain) id <USViewController> viewController; // @synthesize viewController=_viewController;
 @property __weak id <USBillboardDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSString *scope; // @synthesize scope=_scope;
 - (void).cxx_destruct;
@@ -35,15 +34,13 @@
 - (void)cleanupPresentingControllerToScopeMap;
 - (void)onDidEnterBackground:(id)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)contentUnitViewControllerDidDismiss:(id)arg1;
 - (void)contentUnitViewControllerWillDismiss:(id)arg1;
 - (id)initWithScope:(id)arg1;
 @property(readonly, getter=isContentReady) _Bool contentReady;
 - (void)onDidReceivePurchases:(id)arg1;
 - (void)onDidReceiveRewards:(id)arg1;
-- (void)dismissViewControllerAnimated:(_Bool)arg1;
+- (void)close;
 - (void)replacePresentedControllerWithStoreUsingITunesIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)replacePresentedControllerWithViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentViewController:(id)arg1 presentingViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

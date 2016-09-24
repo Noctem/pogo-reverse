@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSNumber, NSURL;
+#import "USContentUnit-Protocol.h"
 
-@interface USContentUnit : NSObject
+@class NSDictionary, NSNumber, NSString, NSURL;
+
+@interface USUpsightContentUnit : NSObject <USContentUnit>
 {
     _Bool _fullScreen;
     NSURL *_templateURL;
     NSDictionary *_context;
+    NSString *_contentProvider;
     NSNumber *_contentID;
     struct CGRect _portraitFrame;
     struct CGRect _landscapeFrame;
@@ -21,13 +24,20 @@
 @property(readonly, nonatomic) struct CGRect landscapeFrame; // @synthesize landscapeFrame=_landscapeFrame;
 @property(readonly, nonatomic) struct CGRect portraitFrame; // @synthesize portraitFrame=_portraitFrame;
 @property(readonly, nonatomic) NSNumber *contentID; // @synthesize contentID=_contentID;
-@property(readonly, nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
+@property(readonly, nonatomic) NSString *contentProvider; // @synthesize contentProvider=_contentProvider;
 @property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSURL *templateURL; // @synthesize templateURL=_templateURL;
+@property(readonly, nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 - (void).cxx_destruct;
 - (struct CGRect)frameForContainerSize:(struct CGSize)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

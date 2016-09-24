@@ -7,19 +7,19 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
-@protocol USContentUnitViewControllerCacheDelegate;
+@protocol USViewControllerCacheDelegate;
 
-@interface USContentUnitViewControllerCache : NSObject
+@interface USViewControllerCache : NSObject
 {
     NSMutableDictionary *_actionMapIDToControllerMap;
-    id <USContentUnitViewControllerCacheDelegate> _delegate;
+    id <USViewControllerCacheDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <USContentUnitViewControllerCacheDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <USViewControllerCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *actionMapIDToControllerMap; // @synthesize actionMapIDToControllerMap=_actionMapIDToControllerMap;
 - (id)anyControllerForScope:(id)arg1;
-- (id)controllerForActionMapID:(id)arg1;
+- (id)topControllerForActionMapID:(id)arg1;
 - (void)removeController:(id)arg1;
 - (void)addController:(id)arg1;
 

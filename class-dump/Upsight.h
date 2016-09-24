@@ -24,6 +24,8 @@
 + (void)setOptOutStatus:(_Bool)arg1;
 + (void)setLocation:(id)arg1;
 + (id)billboardForScope:(id)arg1;
++ (void)recordAttributionEventForCampaign:(id)arg1 creative:(id)arg2 source:(id)arg3 properties:(id)arg4;
++ (void)recordAttributionEventForCampaign:(id)arg1 creative:(id)arg2 source:(id)arg3;
 + (void)recordMilestoneEventForScope:(id)arg1 properties:(id)arg2;
 + (void)recordMilestoneEventForScope:(id)arg1;
 + (void)recordInAppPurchaseEventWithResolution:(unsigned long long)arg1 product:(id)arg2 quantity:(unsigned long long)arg3 price:(float)arg4 currency:(id)arg5 transactionIdentifier:(id)arg6 properties:(id)arg7;
@@ -32,6 +34,7 @@
 + (void)recordAnalyticsEventWithName:(id)arg1 properties:(id)arg2;
 + (id)publicKey;
 + (id)token;
++ (_Bool)isTokenFormatValid:(id)arg1;
 + (id)sharedUpsight;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(retain, nonatomic) id <UpsightDataStoreInterface> dataStore; // @synthesize dataStore=_dataStore;

@@ -13,18 +13,18 @@
     NSArray *_attributeSets;
     NSArray *_attributeSetFilters;
     USParametersProvider *_parameterProvider;
-    NSMutableDictionary *_modifiedFiltersToOriginals;
     NSMutableDictionary *_filtersToAttributeSetNames;
     NSDictionary *_baseParameterToSelectorMap;
     NSDictionary *_optionalParameterToSelectorMap;
     NSMutableDictionary *_parameterProvidersCache;
+    NSArray *_sortedFilters;
 }
 
+@property(retain, nonatomic) NSArray *sortedFilters; // @synthesize sortedFilters=_sortedFilters;
 @property(retain, nonatomic) NSMutableDictionary *parameterProvidersCache; // @synthesize parameterProvidersCache=_parameterProvidersCache;
 @property(retain, nonatomic) NSDictionary *optionalParameterToSelectorMap; // @synthesize optionalParameterToSelectorMap=_optionalParameterToSelectorMap;
 @property(retain, nonatomic) NSDictionary *baseParameterToSelectorMap; // @synthesize baseParameterToSelectorMap=_baseParameterToSelectorMap;
 @property(retain, nonatomic) NSMutableDictionary *filtersToAttributeSetNames; // @synthesize filtersToAttributeSetNames=_filtersToAttributeSetNames;
-@property(retain, nonatomic) NSMutableDictionary *modifiedFiltersToOriginals; // @synthesize modifiedFiltersToOriginals=_modifiedFiltersToOriginals;
 @property(retain, nonatomic) USParametersProvider *parameterProvider; // @synthesize parameterProvider=_parameterProvider;
 @property(retain, nonatomic) NSArray *attributeSetFilters; // @synthesize attributeSetFilters=_attributeSetFilters;
 @property(retain, nonatomic) NSArray *attributeSets; // @synthesize attributeSets=_attributeSets;

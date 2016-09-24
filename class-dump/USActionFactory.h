@@ -18,6 +18,9 @@
 }
 
 - (void).cxx_destruct;
+- (CDUnknownBlockType)presentSubcontentBuilder;
+- (CDUnknownBlockType)presentSubdialogBuilder;
+- (CDUnknownBlockType)presentScopedDialogBuilder;
 - (CDUnknownBlockType)notifyUXMValuesSynchronized;
 - (CDUnknownBlockType)openInAppStoreBuilder;
 - (CDUnknownBlockType)setBundleIDBuilder;

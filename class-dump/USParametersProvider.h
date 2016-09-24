@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDateFormatter, NSNumber, NSString;
+@class NSArray, NSDateFormatter, NSMutableArray, NSNumber, NSString;
 
 @interface USParametersProvider : NSObject
 {
@@ -17,10 +17,14 @@
     NSString *_OSVersion;
     NSString *_deviceType;
     NSDateFormatter *_timezoneDateFormatter;
+    NSMutableArray *_partnerInfoProviders;
 }
 
 + (id)sharedProvider;
+@property(retain, nonatomic) NSMutableArray *partnerInfoProviders; // @synthesize partnerInfoProviders=_partnerInfoProviders;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *partnerInfo;
+- (void)registerPartnerInfoProvider:(id)arg1;
 @property(readonly, nonatomic) NSString *UXMSchemaHash;
 @property(readonly, nonatomic) NSString *UXMBundleHash;
 @property(readonly, nonatomic) NSString *UXMBundleID;

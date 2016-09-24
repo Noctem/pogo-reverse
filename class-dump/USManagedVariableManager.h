@@ -11,7 +11,7 @@
 #import "USManagedVariableObserver-Protocol.h"
 
 @class NSDictionary, NSMutableDictionary, NSString;
-@protocol USManagedVariableObserverDelegate, UpsightDataStoreInterface;
+@protocol USActionMapManagerInterface, USManagedVariableObserverDelegate, UpsightDataStoreInterface;
 
 @interface USManagedVariableManager : NSObject <USActionMapManagerObserver, USActionHandlerDelegate, USManagedVariableObserver>
 {
@@ -21,6 +21,7 @@
     id <USManagedVariableObserverDelegate> _delegate;
     NSDictionary *_actionTypeToHandlerMap;
     NSMutableDictionary *_mapIDToSyncBool;
+    id <USActionMapManagerInterface> _actionMapManager;
     id <UpsightDataStoreInterface> _dataStore;
 }
 
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic) NSDictionary *actionTypeToHandlerMap; // @synthesize actionTypeToHandlerMap=_actionTypeToHandlerMap;
 - (void)actionMapManager:(id)arg1 didDestroyActionMap:(id)arg2;
 - (void)onDidChangeUXMVariable:(id)arg1 action:(unsigned long long)arg2;
+@property __weak id <USActionMapManagerInterface> actionMapManager; // @synthesize actionMapManager=_actionMapManager;
 @property(readonly) NSMutableDictionary *mapIDToSyncBool; // @synthesize mapIDToSyncBool=_mapIDToSyncBool;
 @property(readonly) NSMutableDictionary *mapIDToTagsMap; // @synthesize mapIDToTagsMap=_mapIDToTagsMap;
 @property(readonly) NSMutableDictionary *tagsToManagedVariablesMap; // @synthesize tagsToManagedVariablesMap=_tagsToManagedVariablesMap;

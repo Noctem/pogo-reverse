@@ -28,6 +28,7 @@
 - (void)initializeSDK;
 - (void)onApplicationDidFinishLaunching:(id)arg1;
 - (void)installObservers;
+- (id)partnerManagerForStore:(id)arg1;
 - (id)actionMapManagerForStore:(id)arg1;
 - (id)billboardManagerForStore:(id)arg1;
 - (id)configurationManagerForStore:(id)arg1;

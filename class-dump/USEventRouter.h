@@ -21,7 +21,6 @@
     NSArray *_sortedFilters;
 }
 
-+ (CDUnknownBlockType)filterSortingComparator;
 + (id)routerWithDispatcherConfiguration:(id)arg1 attributeBuilder:(id)arg2 operationQueue:(id)arg3 dataSender:(id)arg4;
 @property(retain, nonatomic) NSArray *sortedFilters; // @synthesize sortedFilters=_sortedFilters;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;

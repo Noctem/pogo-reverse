@@ -6,35 +6,37 @@
 
 #import <objc/NSObject.h>
 
-#import "NSURLConnectionDataDelegate-Protocol.h"
+#import "NSURLSessionDelegate-Protocol.h"
 #import "USDataSenderInterface-Protocol.h"
 
-@class NSMutableDictionary, NSOperationQueue, NSString;
+@class NSMutableDictionary, NSOperationQueue, NSString, NSURLSession;
 
-@interface USDataSender : NSObject <NSURLConnectionDataDelegate, USDataSenderInterface>
+@interface USDataSender : NSObject <NSURLSessionDelegate, USDataSenderInterface>
 {
     NSOperationQueue *_sendQueue;
-    NSMutableDictionary *_connections;
     unsigned long long _taskIdentifier;
+    NSMutableDictionary *_dataTaskToInfoMap;
+    NSURLSession *_URLSession;
 }
 
+@property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
+@property(retain, nonatomic) NSMutableDictionary *dataTaskToInfoMap; // @synthesize dataTaskToInfoMap=_dataTaskToInfoMap;
 @property unsigned long long taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
-@property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) NSOperationQueue *sendQueue; // @synthesize sendQueue=_sendQueue;
 - (void).cxx_destruct;
+- (void)completeTask:(id)arg1;
 - (_Bool)verifySignatureWithInfo:(id)arg1;
 - (void)endBackgroundTask;
 - (void)endBackgroundTaskIfIdle;
-- (_Bool)hasIncompleteConnections;
+- (_Bool)hasIncompleteDataTasks;
 - (void)onApplicationWillEnterForeground:(id)arg1;
 - (void)startBackgroundTask;
 - (void)onApplicationDidEnterBackground:(id)arg1;
 - (void)installObservers;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)sendData:(id)arg1 toURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 queue:(id)arg4;
 - (void)dealloc;
 - (id)initWithSendQueue:(id)arg1;

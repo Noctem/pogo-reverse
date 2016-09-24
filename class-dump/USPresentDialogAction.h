@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "USConditionalAction.h"
+#import "USBaseAction.h"
 
-@protocol USContentUnit;
+@protocol USViewController;
 
-@interface USBuildContentAction : USConditionalAction
+@interface USPresentDialogAction : USBaseAction
 {
-    id <USContentUnit> _contentUnit;
+    id <USViewController> _alert;
 }
 
 + (id)type;
-@property(readonly, nonatomic) id <USContentUnit> contentUnit; // @synthesize contentUnit=_contentUnit;
+@property(retain, nonatomic) id <USViewController> alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
 - (id)initWithParameters:(id)arg1 map:(id)arg2 handler:(CDUnknownBlockType)arg3;
 

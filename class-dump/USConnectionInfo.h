@@ -6,11 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, NSMutableData, NSOperationQueue, NSString, NSURLConnection;
+@class NSError, NSMutableData, NSOperationQueue, NSString;
 
 @interface USConnectionInfo : NSObject
 {
-    NSURLConnection *_connection;
     NSMutableData *_responseData;
     NSOperationQueue *_callbackQueue;
     NSString *_referenceID;
@@ -25,7 +24,6 @@
 @property(retain, nonatomic) NSString *referenceID; // @synthesize referenceID=_referenceID;
 @property(retain, nonatomic) NSOperationQueue *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSMutableData *responseData; // @synthesize responseData=_responseData;
-@property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)notifyClientWithCompletionHandler:(CDUnknownBlockType)arg1;
 
